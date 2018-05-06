@@ -4,7 +4,7 @@
  *  Copyright 2018 Michael Struck
  *  Precision code additions and other UI-Barry Burke
  * 
- *  Version 3.0.2 3/24/18
+ *  
  *
  *  Version 2.0.0 (6/2/17) AdamV Release: Updated Region so it works in UK & US
  *  Version 3.0.0 (8/1/17) Re-engineered release by Michael Struck. Added C/F temperature units, cleaned up code and interface, adding a repoll timer, removed username
