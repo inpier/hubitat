@@ -46,68 +46,7 @@ metadata {
 		fingerprint deviceId: "0x1801" , inClusters: "0x5E,0x59,0x80,0x56,0x7A,0x73,0x98,0x22,0x85,0x5B,0x70,0x5A,0x72,0x8E,0x86,0x84,0x75"
 		fingerprint deviceId: "0x1801" , inClusters: "0x5E,0x85,0x59,0x80,0x5B,0x70,0x56,0x5A,0x7A,0x72,0x8E,0x73,0x86,0x84,0x75,0x22"
 	}
-/*
-	tiles (scale: 2){
-		def detailList = []
-		standardTile("menuButton", "device.button", inactiveLabel: false, decoration: "flat", width: 2, height: 2, canChangeIcon: true) {
-			state "default", label:"PUSH",  action:"menuButton", backgroundColor: "#00A0DC", icon: "https://raw.githubusercontent.com/ClassicGOD/SmartThingsPublic/master/devicetypes/classicgod/fibaro-keyfob.src/main_icon.png"
-			state "pushed", label:"PUSH",  action:"menuButton", backgroundColor: "#FFFFFF", icon: "https://raw.githubusercontent.com/ClassicGOD/SmartThingsPublic/master/devicetypes/classicgod/fibaro-keyfob.src/main_icon.png"
-		}
-		[1,2,3,7,13,8,14,9,15,19,20,21,4,5,6,10,16,11,17,12,18,22,23,24,25,26,27,28,29,30].each { n ->
-			if (n in (1..6)) { //main large tiles
-				def String imgUrl = "https://raw.githubusercontent.com/ClassicGOD/SmartThingsPublic/master/devicetypes/classicgod/fibaro-keyfob.src/b0#_icon.png"
-				imgUrl = imgUrl.replaceAll("#", n as String)
-				detailList << "button$n"
-				standardTile("button$n", "device.button", inactiveLabel: false, decoration: "flat", width: 2, height: 2) {
-					state "default", label: "", action:"button$n", icon: imgUrl
-				}
-			} else if (n in (7..12)) { //x2 tiles
-				detailList << "button$n"
-				standardTile("button$n", "device.button", inactiveLabel: false, decoration: "flat", width: 1, height: 1) {
-					state "default", label:"", action:"button$n", icon: "https://raw.githubusercontent.com/ClassicGOD/SmartThingsPublic/master/devicetypes/classicgod/fibaro-keyfob.src/x2.png"
-				}
-			} else if (n in (13..18)) { //x3 tiles
-				detailList << "button$n"
-				standardTile("button$n", "device.button", inactiveLabel: false, decoration: "flat", width: 1, height: 1) {
-					state "default", label:"", action:"button$n", icon: "https://raw.githubusercontent.com/ClassicGOD/SmartThingsPublic/master/devicetypes/classicgod/fibaro-keyfob.src/x3.png"
-				}
-			} else if (n in (19..24)) { //hold tiles
-				def i = n - 18
-				detailList << "switch$i"
-				standardTile("switch$i", "device.switch$i",canChangeIcon: false, width: 2, height: 1, decoration: "flat") {
-					state "on", label: "", action: "off$i",  backgroundColor: "#00A0DC", icon: "https://raw.githubusercontent.com/ClassicGOD/SmartThingsPublic/master/devicetypes/classicgod/fibaro-keyfob.src/release_icon.png"
-					state "off", label: "", action: "on$i",  backgroundColor: "#ffffff", icon: "https://raw.githubusercontent.com/ClassicGOD/SmartThingsPublic/master/devicetypes/classicgod/fibaro-keyfob.src/hold_icon.png"
-				}
-			} else if (n in (25..30)) { //sequence tiles
-				def i = n - 24
-				detailList << "button$n"
-				valueTile("button$n", "device.button", inactiveLabel: false, decoration: "flat", width: 2, height: 1) {
-					state "default", label:"SEQENCE $i", action:"button$n"
-				}
-			}
-		}
-		valueTile("batteryStatus", "device.batteryStatus", inactiveLabel: false, decoration: "flat", width: 4, height: 2) {
-			state "val", label:'${currentValue}'
-		}
-		standardTile("syncStatus", "device.syncStatus", decoration: "flat", width: 2, height: 2) {
-			state "synced", label:'OK', action:"forceSync", backgroundColor: "#00a0dc", icon: "https://raw.githubusercontent.com/ClassicGOD/SmartThingsPublic/master/devicetypes/classicgod/fibaro-motion-sensor-zw5.src/images/sync_icon.png"
-			state "pending", label:"Pending", action:"forceSync", backgroundColor: "#153591", icon: "https://raw.githubusercontent.com/ClassicGOD/SmartThingsPublic/master/devicetypes/classicgod/fibaro-motion-sensor-zw5.src/images/sync_icon.png"
-			state "inProgress", label:"Syncing", action:"forceSync", backgroundColor: "#44b621", icon: "https://raw.githubusercontent.com/ClassicGOD/SmartThingsPublic/master/devicetypes/classicgod/fibaro-motion-sensor-zw5.src/images/sync_icon.png"
-			state "incomplete", label:"Incomplete", action:"forceSync", backgroundColor: "#f1d801", icon: "https://raw.githubusercontent.com/ClassicGOD/SmartThingsPublic/master/devicetypes/classicgod/fibaro-motion-sensor-zw5.src/images/sync_icon.png"
-			state "failed", label:"Failed", action:"forceSync", backgroundColor: "#bc2323", icon: "https://raw.githubusercontent.com/ClassicGOD/SmartThingsPublic/master/devicetypes/classicgod/fibaro-motion-sensor-zw5.src/images/sync_icon.png"
-			state "force", label:"Force", action:"forceSync", backgroundColor: "#e86d13", icon: "https://raw.githubusercontent.com/ClassicGOD/SmartThingsPublic/master/devicetypes/classicgod/fibaro-motion-sensor-zw5.src/images/sync_icon.png"
-		}
-		valueTile("battery", "device.battery", inactiveLabel: false, decoration: "flat", width: 2, height: 2, canChangeIcon: true) {
-			state "val", label:'Battery: ${currentValue}%', icon: "https://raw.githubusercontent.com/ClassicGOD/SmartThingsPublic/master/devicetypes/classicgod/fibaro-keyfob.src/main_icon.png"
-		}
-		
-		detailList << "batteryStatus"
-		detailList << "syncStatus"
-		
-		main "menuButton"
-		details(detailList)
-	}
-  */
+
 
     preferences {
             input (
@@ -175,71 +114,7 @@ metadata {
 
     
     
- /*   
-    preferences {
-            input (
-			type: "paragraph",
-			element: "paragraph",
-			title: "Lock Mode:",
-			description: "The KeyFob can be protected with a sequence of 2 to 5 button clicks. It can be locked by being inactive for time set or pressing and holding selected button"
-		)
-		input name: "protection", title: "Protection State", type: "enum", options: [0: "Unprotected", 1: "Protection by sequence"], required: false
-		input name: "unlockSeq", type: "number", title: "Unlocking Sequence:", required: false
-		input name: "lockTim", type: "number", title: "Time To Lock", required: false
-		input name: "lockBtn", type: "number", title: "Locking Button", required: false
-		input (
-			type: "paragraph",
-			element: "paragraph",
-			title: "Sequences:",
-			description: "User can create sequences of two to five button to expand numberof possible actions. \n\nSet button sequence using button numbers 1 to 6 (for example: 1234)"
-		)
-		
-        parameterMap().findAll( {it.key.contains('seq')} ).each {
-			input (
-				name: it.key,
-				title: it.descr,
-				type: "number",
-				required: false
-			)
-		}
-
-		input (
-			type: "paragraph",
-			element: "paragraph",
-			title: "Button Modes:",
-			description: "Select button modes.\nActivating a double click will introduce delay to a single click reaction and activating a triple click will introduce delay to a double click reaction."
-		)
-
-        parameterMap().findAll( {it.key.contains('btn')} ).each {
-			input (
-				name: it.key,
-				title: it.descr,
-				type: "enum",
-				options: [
-					1: "1 Click", 
-					2: "2 Clicks", 
-					3: "1 & 2 Clicks", 
-					4: "3 Clicks", 
-					5: "1 & 3 Clicks", 
-					6: "2 & 3 Clicks", 
-					7: "1, 2 & 3 Clicks", 
-					8: "Hold and Release", 
-					9: "1 Click & Hold (Default)", 
-					10: "2 Clicks & Hold",
-					11: "1, 2 Clicks & Hold",
-					12: "3 Clicks & Hold",
-					13: "1, 3 Clicks & Hold",
-					14: "2, 3 Clicks & Hold",
-					15: "1, 2, 3 Clicks & Hold"
-				],
-				required: false
-			)
-		}
-
-		input name: "menuButton", type: "number", title: "Button number to be activated from main menu:", required: false
-		input name: "logging", title: "Logging", type: "boolean", required: false 
-	}
-*/
+ 
 }
 
 def installed() {
@@ -443,33 +318,7 @@ def menuButton() {
 		buttonEvent(settings.menuButton as Integer,"pushed") 
 	}
 }
-/*
-def buttonEvent(button, action) {
-	log.debug "Button $button -- Action $action"
-    button = button as Integer
-	def switchNr = button - 30 as Integer
-	switch (action ) {
-		case "pushed":
-        sendEvent(name: "pushed", value: "$buton", data: [buttonNumber: button], descriptionText: "$device.displayName button $button was pushed", isStateChange: true)
-	log.debug "Button number $button was pushed" 
-   break
-       
-    case "held":
-        log.debug "Button number $button was held"
-		sendEvent(name: "held", value: "$buton", data: [buttonNumber: button], descriptionText: "$device.displayName button $button was pushed", isStateChange: true)
-		//sendEvent(name: "switch$switchNr", value: "on", data: [switchNumber: switchNr], descriptionText: "$device.displayName switch $switchNr was turned on", isStateChange: true)
-	break
-        case "doubleTapped":
-        log.debug "443 Button number $button was double tapped"
-		sendEvent(name: "doubleTapped", value: "$buton", data: [buttonNumber: button], descriptionText: "$device.displayName button $button was pushed", isStateChange: true)
-   
-        sendEvent(name: "switch$switchNr", value: "off", data: [switchNumber: switchNr], descriptionText: "$device.displayName switch $switchNr was turned off", isStateChange: true)
-	break
 
-    }
-
-}
-*/
 def buttonEvent(button, action) {
 	//log.debug "471 Button $button -- Action $action"
     button = button as Integer
